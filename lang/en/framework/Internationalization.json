@@ -11,5 +11,7 @@
     "current": "Current locale",
     "locales": "Available locales",
     "t": "Translation function used internally"
-  }
+  },
+  "vueI18nHeader": "Vue i18n",
+  "vueI18nText1": "If you are using the `vue-i18n` package, you can integrate Vuetify right out of the box. Simply create an entry for `$vuetify` within your messages and add the corresponding language changes. For a complete list of all available targets, [navigate here](#create-translation)."
 }

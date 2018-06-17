@@ -54,6 +54,46 @@
         |   &lt;/div&gt;
         | &lt;/template&gt;
 
+    section#vue-i18n
+      section-head(value="Framework.Internationalization.vueI18nHeader")
+      section-text(value="Framework.Internationalization.vueI18nText1")
+
+      markup(lang="js")
+        | import VueI18n from 'vue-i18n'
+
+        | Vue.use(VueI18n)
+
+        | const messages = {
+        |   en: {
+        |     $vuetify: {
+        |       message: {
+        |         hello: 'hello world',
+        |         params: 'hello {0}'
+        |       }
+        |     },
+        |   },
+        |   ja: {
+        |     $vuetify: {
+        |       message: {
+        |         hello: 'こんにちは、世界',
+        |         params: 'こんにちは、{0}'
+        |       }
+        |     },
+        |   }
+        | }
+
+        | // Create VueI18n instance with options
+        | const i18n = new VueI18n({
+        |   locale: 'ja', // set locale
+        |   messages, // set locale messages
+        | })
+
+        | Vue.use(Vuetify, {
+        |   lang: {
+        |     t: (key, ...params) => i18n.t(key, params)
+        |   }
+        | })
+
 </template>
 
 <script>
